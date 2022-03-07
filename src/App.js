@@ -30,8 +30,8 @@ const App = () => {
           <div>
             <h5 className="reservation-header">Reservations</h5>
             <div className="reservation-cards-container">
-              {reservations.map((name, idx) => {
-                return <ReservationCard name={name} key={idx}/>
+              {reservations.map((name, index) => {
+                return <ReservationCard name={name} index={index} key={index}/>
               })}
             </div>
           </div>
