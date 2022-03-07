@@ -1,11 +1,27 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
+import { addReservation } from "./app/features/reservationSlice";
 import ReservationCard from "./components/ReservationCard";
 
 const App = () => {
 
+  const [reservationNameInput, setReservationNameInput] = useState("")
+
   const reservations = useSelector((state) => state.reservations.value)
+
+  const dispatch = useDispatch()
+
+  const handleAddReservations = (e) => {
+    //if state is empty just return falsey
+    if(!reservationNameInput) return
+
+    //use dispatch to call my slice function (action) and pass it a state
+    dispatch(addReservation(reservationNameInput))
+
+    //clear state
+    setReservationNameInput("")
+  }
 
   return (
     <div className="App">
@@ -14,14 +30,14 @@ const App = () => {
           <div>
             <h5 className="reservation-header">Reservations</h5>
             <div className="reservation-cards-container">
-              {reservations.map((name) => {
-                return <ReservationCard name={name} />
+              {reservations.map((name, idx) => {
+                return <ReservationCard name={name} key={idx}/>
               })}
             </div>
           </div>
           <div className="reservation-input-container">
-            <input />
-            <button>Add</button>
+            <input value={reservationNameInput} onChange={(e) => setReservationNameInput(e.target.value)} />
+            <button onClick={handleAddReservations}>Add</button>
           </div>
         </div>
         <div className="customer-food-container">
