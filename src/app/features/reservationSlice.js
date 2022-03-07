@@ -4,7 +4,7 @@ const initialState = {
   value: []
 }
 
-const reservationsSlice = createSlice({
+export const reservationsSlice = createSlice({
   name: "reservations",
   initialState,
   reducers: {
