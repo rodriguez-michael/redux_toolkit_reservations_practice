@@ -36,7 +36,25 @@
   box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
   width: 80%;
   margin: 1rem 0;
+  display: flex;
 }
+
+.reservation-accept {
+  background-color: rgb(136, 213, 136);
+  border-radius: 0.2rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
+  width: 20%;
+  margin-left: auto; 
+}
+
+.reservation-cancel {
+  background-color: rgb(245, 78, 78);
+  border-radius: 0.2rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
+  width: 20%;
+  margin-left: auto;
+}
+
 .reservation-input-container {
   width: 80%;
   padding: 0.5rem 1rem;
@@ -88,4 +106,17 @@
   width: 100%;
   margin-top: 1rem;
   justify-content: space-between;
+}
+
+.customer-done-button {
+  background-color: rgb(136, 213, 136);
+  margin-right: .5rem;
+}
+
+.customer-done {
+  background-color: rgb(245, 78, 78);
+  border-radius: 0.2rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.171);
+  width: 100%;
+  margin-left: auto;
 }
